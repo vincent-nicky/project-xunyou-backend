@@ -104,6 +104,7 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
         // 8. 插入队伍信息到队伍表
         team.setId(null);
         team.setUserId(userId);
+        team.setBgImgUrl("http://qn.charon1030.top/project-xunyou/cbc86b4a-29b3-46f5-a1cd-eb7d98e353a4");
         boolean result = this.save(team);
         Long teamId = team.getId();
         if (!result || teamId == null) {

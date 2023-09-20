@@ -98,15 +98,14 @@ public class UserController {
     public void sentCode(@RequestParam String mail, @RequestParam int opt) {
         // 在缓存中找验证码
         String redisKey = "xunyou:user" + mail + ":confirmKey:";
-        ValueOperations<String, Object> valueOperations = redisTemplate.opsForValue();
-        String confirmKey = (String) valueOperations.get(redisKey);
+        String confirmKey = (String) redisTemplate.opsForValue().get(redisKey);
         // 如果在缓存中找不到，将它设置为空字符串
         if (confirmKey == null) {
             confirmKey = "";
             // 生成验证码并在缓存中设置验证码
             userService.getCheckCode(mail, redisKey, confirmKey, opt);
         } else { //如果在缓存中找到了，就再发一遍验证码
-            sendMail(mail, "您好，欢迎使用wsj的伙伴匹配系统，您本次的验证码为：" + confirmKey + "，请勿泄露。", "【伙伴匹配系统】账号安全中心");
+            sendMail(mail, "您好，欢迎使用寻友，您本次的验证码为：" + confirmKey + "，请勿泄露。", "【寻友 by WSJ】账号安全中心");
         }
     }
 
@@ -114,8 +113,7 @@ public class UserController {
     @GetMapping("/code/check")
     public boolean codeCheck(@RequestParam String codeCheck, @RequestParam String email) {
         String redisKey = "xunyou:user" + email + ":confirmKey:";
-        ValueOperations<String, Object> valueOperations = redisTemplate.opsForValue();
-        String confirmKey = (String) valueOperations.get(redisKey);
+        String confirmKey = (String) redisTemplate.opsForValue().get(redisKey);
         if (!codeCheck.equals(confirmKey)) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "验证码错误或已过期");
         } else {

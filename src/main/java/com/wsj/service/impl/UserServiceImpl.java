@@ -81,6 +81,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         user.setEmail(email);
 //        user.setUserPassword(encryptPassword);
         user.setUserPassword(userPassword);
+        user.setBgImgUrl("http://qn.charon1030.top/project-xunyou/cbc86b4a-29b3-46f5-a1cd-eb7d98e353a4");
         boolean saveResult = this.save(user);
         if (!saveResult) {
             return -1L;
@@ -143,7 +144,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         int ran = (int) (Math.random() * 9000) + 1000;
         String checkCode = String.valueOf(ran);
 
-        sendMail(mail, "您好，欢迎使用wsj的伙伴匹配系统，您本次的验证码为：" + checkCode + "。验证码有效期为1分钟，请勿泄露。", "【伙伴匹配系统】账号安全中心");
+        sendMail(mail, "您好，欢迎使用寻友，您本次的验证码为：" + checkCode + "。验证码有效期为1分钟，请勿泄露。", "【寻友 by WSJ】账号安全中心");
 //            System.out.println("邮箱已发送！");
         try {
             // 指定缓存1分钟过期时间
