@@ -44,4 +44,4 @@ Jaccard相似度匹配用户
 
 个人信息及修改：
 
-![image-20230921172349449](C:/Users/86178/AppData/Roaming/Typora/typora-user-images/image-20230921172349449.png)
+![image-20230921172349449](https://cdn.jsdelivr.net/gh/vincent-nicky/image_store/blog/image-20230921172349449.png)
