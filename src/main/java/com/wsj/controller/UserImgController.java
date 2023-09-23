@@ -31,32 +31,32 @@ public class UserImgController {
                                        @PathVariable("type") Long type,
                                        @RequestParam("image") MultipartFile image)
             throws IOException {
-
-        // 校验文件
-        long size = image.getSize();
-        String originalFilename = image.getOriginalFilename();
-        // 校验文件大小
-        final long ONE_MB = 3 * 1024 * 1024L;
-        if(size > ONE_MB){
-            throw new BusinessException(ErrorCode.PARAMS_ERROR, "文件超过 3MB");
-        }
-        // 校验文件后缀
-        String suffix = FileUtil.getSuffix(originalFilename);
-        final List<String> validFileSuffixList = Arrays.asList("png", "jpg");
-        if(!validFileSuffixList.contains(suffix)){
-            throw new BusinessException(ErrorCode.PARAMS_ERROR, "文件后缀非法");
-        }
-
-        // 上传图片
-        String url = qiniuImageUtil.uploadImageQiniu(image);
-        User user = userService.getById(userId);
-        if (type == 1) {
-            user.setAvatarUrl(url);
-        } else {
-            user.setBgImgUrl(url);
-        }
-        userService.updateById(user);
-        return ResultUtils.success(url);
+        throw new BusinessException(ErrorCode.PARAMS_ERROR, "由于OSS不完善，图片上传功能暂不可用。");
+//        // 校验文件
+//        long size = image.getSize();
+//        String originalFilename = image.getOriginalFilename();
+//        // 校验文件大小
+//        final long ONE_MB = 3 * 1024 * 1024L;
+//        if(size > ONE_MB){
+//            throw new BusinessException(ErrorCode.PARAMS_ERROR, "文件超过 3MB");
+//        }
+//        // 校验文件后缀
+//        String suffix = FileUtil.getSuffix(originalFilename);
+//        final List<String> validFileSuffixList = Arrays.asList("png", "jpg");
+//        if(!validFileSuffixList.contains(suffix)){
+//            throw new BusinessException(ErrorCode.PARAMS_ERROR, "文件后缀非法");
+//        }
+//
+//        // 上传图片
+//        String url = qiniuImageUtil.uploadImageQiniu(image);
+//        User user = userService.getById(userId);
+//        if (type == 1) {
+//            user.setAvatarUrl(url);
+//        } else {
+//            user.setBgImgUrl(url);
+//        }
+//        userService.updateById(user);
+//        return ResultUtils.success(url);
     }
 
 }
