@@ -42,16 +42,16 @@ Jaccard相似度匹配用户
 
   主页：
 
-![image-20230921172107902](https://cdn.jsdelivr.net/gh/vincent-nicky/image_store/blog/image-20230921172107902.png)
+![image-20230921172107902](https://cdn.jsdelivr.net/gh/vincenicky/image_store/blog/image-20230921172107902.png)
 
 组队功能：
 
-![image-20230921172157843](https://cdn.jsdelivr.net/gh/vincent-nicky/image_store/blog/image-20230921172157843.png)
+![image-20230921172157843](https://cdn.jsdelivr.net/gh/vincenicky/image_store/blog/image-20230921172157843.png)
 
 创建队伍：
 
-![image-20230921172311653](https://cdn.jsdelivr.net/gh/vincent-nicky/image_store/blog/image-20230921172311653.png)
+![image-20230921172311653](https://cdn.jsdelivr.net/gh/vincenicky/image_store/blog/image-20230921172311653.png)
 
 个人信息及修改：
 
-![image-20230921172349449](https://cdn.jsdelivr.net/gh/vincent-nicky/image_store/blog/image-20230921172349449.png)
+![image-20230921172349449](https://cdn.jsdelivr.net/gh/vincenicky/image_store/blog/image-20230921172349449.png)
